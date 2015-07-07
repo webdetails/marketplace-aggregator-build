@@ -78,8 +78,8 @@
         <get src="http://ci.pentaho.com/job/Sparkl/lastSuccessfulBuild/artifact/dist/marketplace.xml" dest=".tmp/sparkl-trunk5.xml"/>
 
         <!-- CFR -->
-        <get src="http://ci.pentaho.com/job/pentaho-cfr-pentaho/lastSuccessfulBuild/artifact/cfr-pentaho/dist/marketplace.xml" dest=".tmp/cfr-trunk.xml"/>
-        <get src="http://ci.pentaho.com/job/pentaho-cfr/lastSuccessfulBuild/artifact/cfr-pentaho5/dist/marketplace.xml" dest=".tmp/cfr-trunk5.xml"/>
+        <get src="http://ci.pentaho.com/job/pentaho-cfr-5x/lastSuccessfulBuild/artifact/cfr-pentaho/dist/marketplace.xml" dest=".tmp/cfr-trunk.xml"/>
+        <get src="http://ci.pentaho.com/job/pentaho-cfr-5x/lastSuccessfulBuild/artifact/cfr-pentaho5/dist/marketplace.xml" dest=".tmp/cfr-trunk5.xml"/>
 
 
 
