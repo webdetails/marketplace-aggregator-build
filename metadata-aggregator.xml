@@ -70,8 +70,8 @@
 
             
         <!-- CDC -->
-		<get src="http://ci.pentaho.com/job/pentaho-cdc/lastSuccessfulBuild/artifact/cdc-pentaho/dist/marketplace.xml" dest=".tmp/cdc-trunk.xml"/>        
-		<get src="http://ci.pentaho.com/job/pentaho-cdc/lastSuccessfulBuild/artifact/cdc-pentaho5/dist/marketplace.xml" dest=".tmp/cdc-trunk5.xml"/>
+		<get src="http://ci.pentaho.com/job/pentaho-cdc-5x/lastSuccessfulBuild/artifact/cdc-pentaho/dist/marketplace.xml" dest=".tmp/cdc-trunk.xml"/>        
+		<get src="http://ci.pentaho.com/job/pentaho-cdc-5x/lastSuccessfulBuild/artifact/cdc-pentaho5/dist/marketplace.xml" dest=".tmp/cdc-trunk5.xml"/>
 
         <!-- Sparkl -->
         <get src="http://ci.pentaho.com/job/Sparkl-4.x/lastSuccessfulBuild/artifact/dist/marketplace.xml" dest=".tmp/sparkl-trunk.xml"/>
