@@ -49,8 +49,8 @@
 
 
 		<!-- CDA -->
-		<get src="http://ci.pentaho.com/job/pentaho-cda-pentaho/lastSuccessfulBuild/artifact/cda-pentaho/dist/marketplace.xml" dest=".tmp/cda-trunk.xml"/>
-        <get src="http://ci.pentaho.com/job/pentaho-cda/lastSuccessfulBuild/artifact/cda-pentaho5/dist/marketplace.xml" dest=".tmp/cda-trunk5.xml"/>
+		<get src="http://ci.pentaho.com/job/pentaho-cda-5x/lastSuccessfulBuild/artifact/cda-pentaho/dist/marketplace.xml" dest=".tmp/cda-trunk.xml"/>
+        <get src="http://ci.pentaho.com/job/pentaho-cda-5x/lastSuccessfulBuild/artifact/cda-pentaho5/dist/marketplace.xml" dest=".tmp/cda-trunk5.xml"/>
 
         <!-- CGG -->
 		<get src="http://ci.pentaho.com/job/pentaho-cgg-pentaho/lastSuccessfulBuild/artifact/cgg-pentaho/dist/marketplace.xml" dest=".tmp/cgg-trunk.xml"/>
