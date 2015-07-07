@@ -65,8 +65,8 @@
 		<get src="http://ci.pentaho.com/job/pentaho-cde-5x/lastSuccessfulBuild/artifact/cde-pentaho5/dist/marketplace.xml" dest=".tmp/pentaho-cdf-dd-trunk5.xml"/>
 
         <!-- CDV -->
-		<get src="http://ci.pentaho.com/job/pentaho-cdv-pentaho/lastSuccessfulBuild/artifact/cdv-pentaho/dist/marketplace.xml" dest=".tmp/cdv-trunk.xml"/>
-		<get src="http://ci.pentaho.com/job/pentaho-cdv/lastSuccessfulBuild/artifact/cdv-pentaho5/dist/marketplace.xml" dest=".tmp/cdv-trunk5.xml"/>
+		<get src="http://ci.pentaho.com/job/pentaho-cdv-5x/lastSuccessfulBuild/artifact/cdv-pentaho/dist/marketplace.xml" dest=".tmp/cdv-trunk.xml"/>
+		<get src="http://ci.pentaho.com/job/pentaho-cdv-5x/lastSuccessfulBuild/artifact/cdv-pentaho5/dist/marketplace.xml" dest=".tmp/cdv-trunk5.xml"/>
 
             
         <!-- CDC -->
