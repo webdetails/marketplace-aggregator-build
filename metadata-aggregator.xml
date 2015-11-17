@@ -21,10 +21,9 @@
 
             </taskdef>
 
-    <property name="projects" value="cda,cgg,pentaho-cdf,pentaho-cdf-dd,cdv,sparkl,cfr,cdc" description="Projects that already have a Pentaho 5 version"/>
+    <property name="projects" value="sparkl,cda,cgg,pentaho-cdf,pentaho-cdf-dd,cdv,cfr,cdc" description="Projects that already have a Pentaho 5 version"/>
 
-<!--   <property name="projects-4-only" value="cdc,cdb" description="Projects that do not have a Pentaho 5 version"/>    -->
-     <property name="projects-4-only" value="" description="Projects that do not have a Pentaho 5 version"/>
+     <property name="projects-4" value="cda,cgg,pentaho-cdf,pentaho-cdf-dd,cdv,cfr,cdc" description="Projects that  have a Pentaho 4 version"/>
 
 	<macrodef name="git">
 		<attribute name="command" />
@@ -110,7 +109,7 @@
       </sequential>
     </for>
 
-    <for list="${projects-4-only}" param="proj">
+    <for list="${projects-4}" param="proj">
       <sequential>
         <echo level="info">###############################</echo>
         <echo level="info">   CALL replace on @{proj}</echo>
@@ -124,29 +123,32 @@
 
 
 
-		<git command="add" dir='../pentaho_metadata'>
-			<args>
-				<arg value="marketplace.xml" />
-			</args>
-		</git>
+    <git command="add" dir='../pentaho_metadata'>
+        <args>
+            <arg value="marketplace.xml" />
+        </args>
+    </git>
 
 
-		<git command="commit"  dir='../pentaho_metadata'>
-			<args>
-				<arg value="--author='Pedro Vale &lt;pedro.m.vale@gmail.com>'" />
-				<arg value="-am 'New version of plugin metadata'" />
-			</args>
-		</git>
+    <git command="commit"  dir='../pentaho_metadata'>
+        <args>
+            <arg value="--author='Pedro Vale &lt;pedro.m.vale@gmail.com>'" />
+            <arg value="-am 'New version of plugin metadata'" />
+        </args>
+    </git>
 
 
 
 
-	    <git command="push"  dir='../pentaho_metadata'>
-        </git>
+    <git command="push"  dir='../pentaho_metadata'>
+    </git>
+
+
+
 
 
 		<delete dir='.tmp'/>
-		<delete dir='../pentaho_metadata'/>
+		<delete dir='../pentaho_metadata'/> 
 
 
 	</target>
@@ -154,26 +156,17 @@
 
     <target name="replace">
 		 <xmltask source="../pentaho_metadata/marketplace.xml" dest="../pentaho_metadata/marketplace.xml" encoding='UTF-8'>
-		   <replace path="/market/market_entry[id='${proj}']/versions/version[branch='TRUNK']"
+		   <replace path="/market/market_entry[id='${proj}']/versions/version[branch='TRUNK' and max_parent_version='4.9']"
         	 withFile=".tmp/${proj}-trunk.xml"/>
-<!--
-		   <replace path="/market/market_entry[id='${proj}']/versions/version[branch='STABLE']"
-        	 withFile=".tmp/${proj}-release.xml"/>
--->
         </xmltask>
     </target>
 
 
     <target name="replace-p5">
 		 <xmltask source="../pentaho_metadata/marketplace.xml" dest="../pentaho_metadata/marketplace.xml" encoding='UTF-8'>
-		   <replace path="/market/market_entry[id='${proj}']/versions/version[branch='TRUNK' and max_parent_version='4.9']"
-        	 withFile=".tmp/${proj}-trunk.xml"/>
 		   <replace path="/market/market_entry[id='${proj}']/versions/version[branch='TRUNK' and (min_parent_version='5.0' or min_parent_version='5.1')]"
         	 withFile=".tmp/${proj}-trunk5.xml"/>
 
-<!--		   <replace path="/market/market_entry[id='${proj}']/versions/version[branch='STABLE']"
-        	 withFile=".tmp/${proj}-release.xml"/>
-        	 -->
         </xmltask>
     </target>
 
